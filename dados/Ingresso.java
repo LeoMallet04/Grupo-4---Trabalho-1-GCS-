@@ -34,4 +34,12 @@ public class Ingresso {
         return visitasAtracoes;
     }
 
+    public void visitarAtracao(Atracao atracao) {
+        atracao.visitado();
+        if (visitasAtracoes.containsKey(atracao)) {
+            visitasAtracoes.put(atracao, visitasAtracoes.get(atracao) + 1);
+        } else {
+            visitasAtracoes.put(atracao, 1);
+        }
+    }
 }
